@@ -131,7 +131,7 @@
 {
     //Set key to corresponding code. This one is set to the left arrow key.
     var key = 39;
-    var el = document.body;
+    var el = document.getElementsById("impress");
     if(document.createEventObject)
     {
         var eventObj = document.createEventObject();
@@ -144,10 +144,10 @@
         eventObj.which = key;
         el.dispatchEvent(eventObj);
     }
-    setTimeout(fireKey, 15000)
+    window.setTimeout(fireKey, 15000)
 } </script>
 <script>
-  setTimeout(fireKey, 15000)
+  window.setTimeout(fireKey, 15000)
 </script>
   </body>
 </html>
