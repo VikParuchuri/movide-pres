@@ -127,6 +127,28 @@
       </div>
     <script src="js/impress.js"></script>
     <script>impress().init();</script>
+    <script>function fireKey()
+{
+    //Set key to corresponding code. This one is set to the left arrow key.
+    var key = 39;
+    var el = getElementsByTagName("body")[0];
+    if(document.createEventObject)
+    {
+        var eventObj = document.createEventObject();
+        eventObj.keyCode = key;
+        el.fireEvent("onkeydown", eventObj);   
+    }else if(document.createEvent)
+    {
+        var eventObj = document.createEvent("Events");
+        eventObj.initEvent("keydown", true, true);
+        eventObj.which = key;
+        el.dispatchEvent(eventObj);
+    }
+    setTimeout(fireKey, 15000)
+} </script>
+<script>
+  setTimeout(fireKey, 15000)
+</script>
   </body>
 </html>
     
